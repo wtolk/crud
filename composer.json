@@ -1,0 +1,19 @@
+{
+    "name": "wtolk/crud",
+    "description": "crud generator for Laravel",
+    "type": "library",
+    "license": "no",
+    "authors": [
+        {
+            "name": "wtolk.ru",
+            "email": "web@wtolk.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Wtolk\\Crud\\": "src/"
+        }
+    },
+    "require": {}
+}
