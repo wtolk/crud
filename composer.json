@@ -2,7 +2,7 @@
     "name": "wtolk/crud",
     "description": "crud generator for Laravel",
     "type": "library",
-    "license": "no",
+    "license": "MIT",
     "authors": [
         {
             "name": "wtolk.ru",
