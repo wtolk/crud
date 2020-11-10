@@ -15,5 +15,12 @@
             "Wtolk\\Crud\\": "src/"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wtolk\\Crud\\Providers\\CrudServiceProvider"
+            ]
+        }
+    },
     "require": {}
 }
