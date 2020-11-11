@@ -89,6 +89,6 @@ class FormPresenter
     public function render()
     {
         $this->registerMainMenu();
-        echo view($this->template, ['form' => $this]);
+        echo view($this->template, ['form' => $this])->render();
     }
 }
