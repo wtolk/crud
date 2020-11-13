@@ -34,7 +34,9 @@ class CrudServiceProvider extends ServiceProvider
                 CrudCommand::class,
             ]);
         }
-
+        $this->publishes([
+            __DIR__.'/../assets' => public_path('vendor/wtolk/crud/'),
+        ]);
         \View::share('php_tags', '<?php');
 //        $this->loadRoutesFrom(__DIR__ . '/../routes.php');
         $this->loadViewsFrom(__DIR__ . '/../views', 'crud');

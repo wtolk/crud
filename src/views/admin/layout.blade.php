@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Админ панель</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" type="text/css" href="{{ mix('css/adfm/adfm-panel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ mix('vendor/wtolk/crud/css/adfm-panel.css') }}">
     <script src="{{ mix('js/app.js') }}"></script>
 {{--    <link rel="stylesheet" href="/panel/admin/css/bootstrap.min.css">--}}
 {{--    <link rel="stylesheet" href="/panel/admin/css/style.css">--}}
@@ -43,7 +43,7 @@
 <div class="wrapper">
 {{--    {% include 'admin-menu.twig' %}--}}
 
-    <aside class="sideBar"><img id="sidebg" src="/wallpaper.jpg">
+    <aside class="sideBar"><img id="sidebg" src="/vendor/wtolk/crud/img/sidebar-wallpaper.jpg">
         <div class="side-menu">
             <h3>ADFM CMS</h3>
 

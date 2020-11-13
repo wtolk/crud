@@ -1,0 +1,53 @@
+// BASE
+// ==============================
+
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.block {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+img {
+    max-width: 100%;
+}
+.nopadding {
+    padding: 0 !important;
+}
+.nomargin {
+    margin: 0 !important;
+}
+
+.abs100 {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
