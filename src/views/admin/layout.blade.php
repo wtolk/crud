@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Админ панель</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <link rel="stylesheet" type="text/css" href="{{ mix('vendor/wtolk/crud/css/adfm-panel.css') }}">
-    <script src="{{ mix('js/app.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('vendor/wtolk/crud/css/adfm-panel.css') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
 {{--    <link rel="stylesheet" href="/panel/admin/css/bootstrap.min.css">--}}
 {{--    <link rel="stylesheet" href="/panel/admin/css/style.css">--}}
 {{--    <link rel="stylesheet" href="/panel/admin/css/admin-menu.css">--}}
