@@ -1,0 +1,121 @@
+.uploader_container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: start;
+    background-color: rgba(0, 0, 0, .1);
+    min-height: 4.75em;
+    border-radius: 9px;
+    color: #4c4e53;
+}
+
+
+.uploader_header {
+    min-height: 4.75em;
+    width: 100%;
+    display: flex;
+    border-radius: 9px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.uploader_input_pool {
+    position: relative;
+    width: 100%;
+}
+
+.uploader_input_text {
+    border: 1px dashed #4c4c4c;
+    border-radius: 9px;
+    padding: 1em;
+    margin: 1em;
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.uploader_text_underlined {
+    text-decoration: underline;
+    text-decoration-style: dashed;
+    cursor: pointer;
+}
+
+.uploader_input {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.uploader_files_list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div.uploader_file_card {
+    width: 20em;
+    margin: 6px 0;
+    list-style-type: none;
+    height: 15em;
+    border: 1px solid black;
+    border-radius: 9px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.uploader_filename {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    color: white;
+    filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 1));
+    white-space: nowrap;
+    overflow: hidden;
+    width: 80%;
+}
+
+.uploader_remove_btn {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    border: 2px solid rgba(255, 255, 255, .6);
+    border-radius: 1.5em;
+    font-size: 1.5em;
+    padding: 4px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, .8);
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, .5));
+}
+
+.uploader_remove_btn:hover {
+    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 1));
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 255, 255, .7);
+}
+
+.uploader_ext_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.uploader_ext_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.uploader_ext{
+    font-size: 3em;
+    padding: 1em;
+    border: 2px solid rgba(0,0,0,.1);
+    border-radius: .8em;
+    background-color: rgba(255,255,255,.3);
+}

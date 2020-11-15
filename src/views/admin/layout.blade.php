@@ -24,10 +24,15 @@
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="/vendor/wtolk/crud/js/hystmodal.min.js"></script>
+    <script src="/vendor/wtolk/crud/js/Sortable.min.js"></script>
     <script src="/vendor/wtolk/crud/js/cropper.min.js"></script>
+    <script src="/vendor/wtolk/crud/js/wtolk-uploader/wtolk-uploader.js"></script>
+
     <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/css/hystmodal.min.css">
     <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/css/cropper.min.css">
-{{--    <script type="text/javascript" href="/panel/plugins/ckeditor/ckeditor.js"></script>--}}
+    <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/js/wtolk-uploader/wtolk-uploader.css">
+
+    {{--    <script type="text/javascript" href="/panel/plugins/ckeditor/ckeditor.js"></script>--}}
 {{--    <script>--}}
 {{--        $(document).ready(function() {--}}
 {{--            CKEDITOR.replace('editor1', {--}}
