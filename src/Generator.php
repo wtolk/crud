@@ -42,13 +42,13 @@ class Generator
     public function setAdfmOption()
     {
         $this->isAdfmMode = true;
-        $this->model_path = 'packages/wtolk/adfm/src/Models/';
-        $this->controller_path = 'packages/wtolk/adfm/src/Controllers/';
-        $this->screen_path = 'packages/wtolk/adfm/src/Controllers/Screens/';
-        $this->model_namespace = 'Wtolk\Adfm\Models';
-        $this->controller_namespace = 'Wtolk\Adfm\Controllers';
-        $this->screen_namespace = 'Wtolk\Adfm\Controllers\Screens';
-        $this->routes_path = 'packages/wtolk/adfm/src/routes.php';
+        $this->model_path = app_path('Adfm/Models');
+        $this->controller_path = app_path('Adfm/Controllers/Admin');
+        $this->screen_path = app_path('Adfm/Controllers/Admin/Screens');
+        $this->model_namespace = 'App\Adfm\Models';
+        $this->controller_namespace = 'App\Adfm\Controllers\Admin';
+        $this->screen_namespace = 'App\Adfm\Controllers\Admin\Screens';
+        $this->routes_path = app_path('Adfm/routes/admin-routes.php');
     }
 
 

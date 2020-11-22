@@ -5,7 +5,7 @@ namespace {{$generator->controller_namespace}};
 use App\Http\Controllers\Controller;
 use {{$generator->controller_namespace}}\Screens\{{$generator->entity_name}}Screen;
 use Illuminate\Http\Request;
-use Wtolk\Adfm\Models\{{$generator->entity_name}};
+use App\Adfm\Models\{{$generator->entity_name}};
 
 class {{$generator->entity_name}}Controller extends Controller
 {

@@ -7,7 +7,7 @@ use Wtolk\Crud\Form\Column;
 use Wtolk\Crud\Form\File;
 use Wtolk\Crud\Form\Summernote;
 use Wtolk\Crud\FormPresenter;
-use Wtolk\Adfm\Models\{{$generator->entity_name}};
+use App\Adfm\Models\{{$generator->entity_name}};
 use Wtolk\Crud\Form\Input;
 use Wtolk\Crud\Form\Checkbox;
 use Wtolk\Crud\Form\TableField;

@@ -4,7 +4,8 @@ namespace {{$generator->model_namespace}};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Wtolk\Adfm\Helpers\AttachmentTrait;
+use App\Adfm\Helpers\AttachmentTrait;
+use App\Adfm\Helpers\Sluggable;
 
 class {{$generator->entity_name}} extends Model
 {
