@@ -12,6 +12,7 @@ class MultiFile extends Model
 {
     public $title;
     public $required = false;
+    public $preview = false;
     public $placeholder;
     public $type = 'file';
     public $template = 'crud::stubs.fields.input-multifile';
@@ -38,6 +39,12 @@ class MultiFile extends Model
     public function required($bool = true)
     {
         $this->required = $bool;
+        return $this;
+    }
+
+    public function preview($bool = true)
+    {
+        $this->preview = $bool;
         return $this;
     }
 

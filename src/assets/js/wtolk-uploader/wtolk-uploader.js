@@ -323,7 +323,7 @@ class WtolkUploader {
         if (['jpg', 'jpeg', 'png', 'gif'].indexOf(file_extension) !== -1) {
 
             if (file.id) {
-                item.style.backgroundImage = 'url(/content/image/' + file.path + '/' + file.md5 + '.' + file.extension + ')';
+                item.style.backgroundImage = 'url('+ file.url + ')';
             } else {
                 item.style.backgroundImage = 'url(' + file.path + ')';
             }
@@ -363,7 +363,7 @@ class WtolkUploader {
 
         let filename = document.createElement('div');
         filename.classList.add('uploader_filename');
-        filename.innerHTML = file.name;
+        filename.innerHTML = file.original_name;
         item.appendChild(filename);
 
         item.appendChild(remove_btn);
@@ -385,10 +385,10 @@ class WtolkUploader {
                 {
                     tag: 'td',
                     childNodes: [
-	                    {
-	                    	tag: 'i',
-	                    	className: 'fa ' + this.getFileFaIcon(file)
-	                    },
+                        {
+                            tag: 'i',
+                            className: 'fa ' + this.getFileFaIcon(file)
+                        },
                         {
                             tag: 'a',
                             html: ' ' + file_name
@@ -411,31 +411,31 @@ class WtolkUploader {
             ]
         }];
         let tr = this.createNode(row)[0];
-            tr.dataset.sort = file.sort;
-            tr.dataset.uuid = file.uuid || WtolkUploader.getUuid();
-            tr.dataset.filename = file.name;
+        tr.dataset.sort = file.sort;
+        tr.dataset.uuid = file.uuid || WtolkUploader.getUuid();
+        tr.dataset.filename = file.name;
 
-            file.id && (tr.dataset.id = file.id);
+        file.id && (tr.dataset.id = file.id);
 
-            tr.getElementsByClassName('btn-remove')[0].onclick = () => {
-                this.removeItem(file)
-            };
+        tr.getElementsByClassName('btn-remove')[0].onclick = () => {
+            this.removeItem(file)
+        };
         this.files_list.appendChild(tr);
         this.updatePositions();
     }
 
     getFileFaIcon(file) {
-    	let ext = {
-    		doc: 'fa-file-word-o', docx: 'fa-file-word-o', xls: 'fa-file-excel-o', xlsx: 'fa-file-excel-o',
-    		ppt: 'fa-file-powerpoint-o', pptx: 'fa-file-powerpoint-o', pdf: 'fa-file-pdf-o',
-    		jpg: 'fa-file-image-o', jpeg: 'fa-file-image-o', pnf: 'fa-file-image-o', gif: 'fa-file-image-o',
-    		zip: 'fa-file-archive-o', rar: 'fa-file-archive-o', txt: 'fa-file-text-o',
-    		html: 'fa-file-code-o', css: 'fa-file-code-o', js: 'fa-file-code-o', php: 'fa-file-code-o',
-    		mp3: 'fa-file-audio-o', aac: 'fa-file-audio-o', ac3: 'fa-file-audio-o', flac: 'fa-file-audio-o',
-    		avi: 'fa-file-video-o', mp4: 'fa-file-video-o', mpeg: 'fa-file-video-o', mkv: 'fa-file-video-o',
-    	}
+        let ext = {
+            doc: 'fa-file-word-o', docx: 'fa-file-word-o', xls: 'fa-file-excel-o', xlsx: 'fa-file-excel-o',
+            ppt: 'fa-file-powerpoint-o', pptx: 'fa-file-powerpoint-o', pdf: 'fa-file-pdf-o',
+            jpg: 'fa-file-image-o', jpeg: 'fa-file-image-o', pnf: 'fa-file-image-o', gif: 'fa-file-image-o',
+            zip: 'fa-file-archive-o', rar: 'fa-file-archive-o', txt: 'fa-file-text-o',
+            html: 'fa-file-code-o', css: 'fa-file-code-o', js: 'fa-file-code-o', php: 'fa-file-code-o',
+            mp3: 'fa-file-audio-o', aac: 'fa-file-audio-o', ac3: 'fa-file-audio-o', flac: 'fa-file-audio-o',
+            avi: 'fa-file-video-o', mp4: 'fa-file-video-o', mpeg: 'fa-file-video-o', mkv: 'fa-file-video-o',
+        }
 
-    	return typeof(ext[file.extension]) === "undefined" ? 'fa-file-o' : ext[file.extension];
+        return typeof(ext[file.extension]) === "undefined" ? 'fa-file-o' : ext[file.extension];
     }
 
     setSortable() {
