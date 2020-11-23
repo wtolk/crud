@@ -42,13 +42,13 @@ class Generator
     public function setAdfmOption()
     {
         $this->isAdfmMode = true;
-        $this->model_path = app_path('Adfm/Models');
-        $this->controller_path = app_path('Adfm/Controllers/Admin');
-        $this->screen_path = app_path('Adfm/Controllers/Admin/Screens');
+        $this->model_path = 'app/Adfm/Models/';
+        $this->controller_path = 'app/Adfm/Controllers/Admin/';
+        $this->screen_path = 'app/Adfm/Controllers/Admin/Screens/';
         $this->model_namespace = 'App\Adfm\Models';
         $this->controller_namespace = 'App\Adfm\Controllers\Admin';
         $this->screen_namespace = 'App\Adfm\Controllers\Admin\Screens';
-        $this->routes_path = app_path('Adfm/routes/admin-routes.php');
+        $this->routes_path = 'app/Adfm/routes/admin-routes.php';
     }
 
 
