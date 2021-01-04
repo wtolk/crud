@@ -21,7 +21,7 @@ class FormPresenter
     public $isModelExists = false; // Если на экране выводится существующая модель для редактирования, а не для добавления.
 
 
-    public function layout($layout)
+    public function template($layout)
     {
         $this->template = 'crud::admin.'.$layout;
         return $this;
