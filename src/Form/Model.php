@@ -10,6 +10,12 @@ use Whoops\Exception\ErrorException;
 
 class Model
 {
+    public $default_value = null;
+
+    public function defaultValue($value) {
+        $this->default_value = $value;
+        return $this;
+    }
     public function getFieldNameFromDottedString($dotted_string)
     {
         $field_array = explode( '.', $dotted_string);

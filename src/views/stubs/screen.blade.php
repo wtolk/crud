@@ -30,7 +30,7 @@ class {{$generator->entity_name}}Screen
     public static function index()
     {
         $screen = new self();
-        $screen->form->layout('table-list')->source([
+        $screen->form->template('table-list')->source([
             '{{strtolower($generator->entity_name)}}s' => {{$generator->entity_name}}::paginate(50)
         ]);
 
@@ -58,7 +58,7 @@ class {{$generator->entity_name}}Screen
     {
         $screen = new self();
         $screen->form->isModelExists = false;
-        $screen->form->layout('form-edit')->source([
+        $screen->form->template('form-edit')->source([
             '{{strtolower($generator->entity_name)}}' => new {{$generator->entity_name}}()
         ]);
         $screen->form->title = 'Создание {{strtolower($generator->entity_name)}}';
@@ -76,7 +76,7 @@ class {{$generator->entity_name}}Screen
     {
         $screen = new self();
         $screen->form->isModelExists = true;
-        $screen->form->layout('form-edit')->source([
+        $screen->form->template('form-edit')->source([
             '{{strtolower($generator->entity_name)}}' => {{$generator->entity_name}}::findOrFail($screen->request->route('id'))
         ]);
         $screen->form->title = 'Редактирование {{strtolower($generator->entity_name)}}';
