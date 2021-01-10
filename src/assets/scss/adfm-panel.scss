@@ -2,12 +2,13 @@
 @import "components/base";
 @import "components/breakpoint";
 @import "components/grid";
+@import "components/text";
 
 body {
     margin: 0;
     font-size: 14px;
     line-height: 1.42857143;
-    color: #333;
+    color: #252525;
 }
 * {
     -webkit-box-sizing: border-box;
@@ -305,20 +306,28 @@ body .main-page {
 
 .form {
     .field {
-        label {
-            display: inline-block;
-            max-width: 100%;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
         margin: 0 0 16px 0;
         background: #F1F1F1;
         padding: 10px;
         border: 1px solid #CCCCCC;
+        &.no-bg {
+            border: 0;
+            background: none;
+            padding: 0 10px;
+        }
+        label {
+            display: inline-block;
+            max-width: 100%;
+            margin-bottom: 5px;
+            font-size: 14px;
+            line-height: 21px;
+        }
         input {
             margin: 0;
             line-height: 2;
-            color: #555;
+            font-size: 16px;
+            font-family: Sans;
+            color: #252525;
             background-color: #fff;
             background-image: none;
             box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
@@ -336,12 +345,11 @@ body .main-page {
             padding: 8px 0 8px 10px;
             margin: 0 0 16px 0;
         }
-        input[type=text], .chosen-container-multi .chosen-choices {
+        input[type=text], input[type=email], input[type=password], .chosen-container-multi .chosen-choices {
             width: 100%;
             height: 36px;
             display: block;
-            border-radius: 3px;
-            border: 1px solid #CCCCCC;
+            border: 1px solid #CACACA;
             font-size: 18px;
             padding: 8px 0 8px 10px;
         }
@@ -354,47 +362,61 @@ body .main-page {
 
 
 .checkbox {
-    display: none;
-}
+    input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    /* для элемента label, связанного с .custom-checkbox */
+    input+label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+    }
+    /* создание в label псевдоэлемента before со следующими стилями */
+    input+label::before {
+        content: '';
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        flex-shrink: 0;
+        flex-grow: 0;
+        border: 1px solid #adb5bd;
+        margin-right: 0.5em;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+    }
+    /* стили при наведении курсора на checkbox */
+    input:not(:disabled):not(:checked)+label:hover::before {
+        border-color: #b3d7ff;
+    }
+    /* стили для активного чекбокса (при нажатии на него) */
+    input:not(:disabled):active+label::before {
+        background-color: #b3d7ff;
+        border-color: #b3d7ff;
+    }
+    /* стили для чекбокса, находящегося в фокусе */
+    input:focus+label::before {
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
 
-.checkbox-custom {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 3px;
-}
+    /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+    input:focus:not(:checked)+label::before {
+        border-color: #80bdff;
+    }
 
-.checkbox-custom,
-.label {
-    display: inline-block;
-    vertical-align: middle;
-    color: #000;
-    user-select: none;
-    -ms-user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-}
+    /* стили для чекбокса, находящегося в состоянии checked */
+    input:checked+label::before {
+        border-color: #24A841;
+        background-color: #24A841;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='rgb(255, 255, 255)' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+    }
 
-.checkbox-custom:hover,
-.label:hover {
-    cursor: pointer;
-}
-
-.checkbox:checked + .checkbox-custom::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 2px;
-    right: 2px;
-    bottom: 2px;
-    left: 2px;
-    background: #413548;
-    border-radius: 2px;
-}
-
-.checkvox:disabled:checked + .checkbox-custom::before {
-    background-color: #999;
+    /* стили для чекбокса, находящегося в состоянии disabled */
+    input:disabled+label::before {
+        background-color: #e9ecef;
+    }
 }
 
 .select-time input {
@@ -542,4 +564,25 @@ button.link {
     background: none;
     cursor: pointer;
     text-decoration: underline;
+}
+
+.auth {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: #E1EDF3;
+}
+.login-card {
+    padding: 60px 0;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    border: 2px solid #6EA5E4;
+    box-sizing: border-box;
+    box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.36);
+}
+h1 {
+    font-size: 24px;
+    line-height: 29px;
 }
