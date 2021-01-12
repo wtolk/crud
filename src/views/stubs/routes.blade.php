@@ -1,5 +1,5 @@
 
-/* Роуты админки сгенерированные автоматически для {{$generator->controller_namespace}} */
+/* Роуты админки сгенерированные автоматически для {{$generator->controller_namespace}}\{{$generator->entity_name}}Controller */
 
 Route::get('/{{strtolower($generator->entity_name)}}s', '{{$generator->entity_name}}Controller@index')->name('@if($generator->isAdfmMode)adfm.@endif{{strtolower($generator->entity_name)}}s.index');
 Route::get('/{{strtolower($generator->entity_name)}}s/create', '{{$generator->entity_name}}Controller@create')->name('@if($generator->isAdfmMode)adfm.@endif{{strtolower($generator->entity_name)}}s.create');
