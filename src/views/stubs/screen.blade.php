@@ -33,7 +33,7 @@ class {{$generator->entity_name}}Screen
         $screen->form->template('table-list')->source([
             '{{strtolower($generator->entity_name)}}s' => {{$generator->entity_name}}::paginate(50)
         ]);
-
+        $screen->form->title = '{{strtolower($generator->entity_name)}}s';
         $screen->form->addField(
             TableField::make('title', 'Название')
                 ->link(function ($model) {
