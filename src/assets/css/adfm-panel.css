@@ -740,29 +740,11 @@ img {
   }
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-h1,
-.h1 {
-  font-size: 24px;
-  line-height: 29px;
-}
-
 body {
   margin: 0;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #252525;
+  color: #333;
 }
 
 * {
@@ -868,8 +850,10 @@ body .wrapper aside {
   position: relative;
   left: 0;
   height: 100%;
+  background: #000;
   color: #fff;
   min-width: 200px;
+  background: url(/wallpaper.jpg) no-repeat 50% 13%;
 }
 
 body .wrapper aside #sidebg {
@@ -936,14 +920,14 @@ body .wrapper aside .side-menu a i {
 
 @font-face {
   font-family: "Sans";
-  src: url(/vendor/wtolk/crud/fonts/clearsansbold.woff2?0d651f8ebfa508a5faea1e03c97f1a80) format("woff2"), url(/vendor/wtolk/crud/fonts/clearsansbold.woff?f1d326af902254d77d541922ffe67beb) format("woff"), url(/vendor/wtolk/crud/fonts/clearsansbold.ttf?3c8c6c940f1c1a9258dfad7e25347c21) format("truetype");
+  src: url(/fonts/clearsansbold.woff2?0d651f8ebfa508a5faea1e03c97f1a80) format("woff2"), url(/fonts/clearsansbold.woff?f1d326af902254d77d541922ffe67beb) format("woff"), url(/fonts/clearsansbold.ttf?3c8c6c940f1c1a9258dfad7e25347c21) format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Sans";
-  src: url(/vendor/wtolk/crud/fonts/clearsans.woff2?2e81f3d7e39f04d4aaa3b916f882530c) format("woff2"), url(/vendor/wtolk/crud/fonts/clearsans.woff?76c7e83bde05ce0e0d46f58f853aba72) format("woff"), url(/vendor/wtolk/crud/fonts/clearsans.ttf?006ab1b7f3f900b6ce54ff93f148523c) format("truetype");
+  src: url(/fonts/clearsans.woff2?2e81f3d7e39f04d4aaa3b916f882530c) format("woff2"), url(/fonts/clearsans.woff?76c7e83bde05ce0e0d46f58f853aba72) format("woff"), url(/fonts/clearsans.ttf?006ab1b7f3f900b6ce54ff93f148523c) format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -1063,26 +1047,17 @@ body .main-page {
   border: 1px solid #CCCCCC;
 }
 
-.form .field.no-bg {
-  border: 0;
-  background: none;
-  padding: 0 10px;
-}
-
 .form .field label {
   display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
-  font-size: 14px;
-  line-height: 21px;
+  font-weight: 700;
 }
 
 .form .field input {
   margin: 0;
   line-height: 2;
-  font-size: 16px;
-  font-family: Sans;
-  color: #252525;
+  color: #555;
   background-color: #fff;
   background-image: none;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
@@ -1104,13 +1079,12 @@ body .main-page {
 }
 
 .form .field input[type=text],
-.form .field input[type=email],
-.form .field input[type=password],
 .form .field .chosen-container-multi .chosen-choices {
   width: 100%;
   height: 36px;
   display: block;
-  border: 1px solid #CACACA;
+  border-radius: 3px;
+  border: 1px solid #CCCCCC;
   font-size: 18px;
   padding: 8px 0 8px 10px;
 }
@@ -1120,70 +1094,47 @@ body .main-page {
 }
 
 .checkbox {
-  /* для элемента label, связанного с .custom-checkbox */
-  /* создание в label псевдоэлемента before со следующими стилями */
-  /* стили при наведении курсора на checkbox */
-  /* стили для активного чекбокса (при нажатии на него) */
-  /* стили для чекбокса, находящегося в фокусе */
-  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-  /* стили для чекбокса, находящегося в состоянии checked */
-  /* стили для чекбокса, находящегося в состоянии disabled */
+  display: none;
 }
 
-.checkbox input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+.checkbox-custom {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
 }
 
-.checkbox input + label {
-  display: inline-flex;
-  align-items: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.checkbox input + label::before {
-  content: "";
+.checkbox-custom,
+.label {
   display: inline-block;
-  width: 1em;
-  height: 1em;
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: 1px solid #adb5bd;
-  margin-right: 0.5em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
+  vertical-align: middle;
+  color: #000;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
-.checkbox input:not(:disabled):not(:checked) + label:hover::before {
-  border-color: #b3d7ff;
+.checkbox-custom:hover,
+.label:hover {
+  cursor: pointer;
 }
 
-.checkbox input:not(:disabled):active + label::before {
-  background-color: #b3d7ff;
-  border-color: #b3d7ff;
+.checkbox:checked + .checkbox-custom::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  background: #413548;
+  border-radius: 2px;
 }
 
-.checkbox input:focus + label::before {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-
-.checkbox input:focus:not(:checked) + label::before {
-  border-color: #80bdff;
-}
-
-.checkbox input:checked + label::before {
-  border-color: #24A841;
-  background-color: #24A841;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='rgb(255, 255, 255)' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
-}
-
-.checkbox input:disabled + label::before {
-  background-color: #e9ecef;
+.checkvox:disabled:checked + .checkbox-custom::before {
+  background-color: #999;
 }
 
 .select-time input {
@@ -1337,31 +1288,3 @@ button.link {
   cursor: pointer;
   text-decoration: underline;
 }
-
-.auth {
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  background: #E1EDF3;
-}
-
-.login-card {
-  padding: 60px 0;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  background: #FFFFFF;
-  border: 2px solid #6EA5E4;
-  box-sizing: border-box;
-  box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.36);
-}
-
-h1 {
-  font-size: 24px;
-  line-height: 29px;
-}
-
-.test {
-  color: red;
-}
-

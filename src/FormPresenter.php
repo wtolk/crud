@@ -44,7 +44,10 @@ class FormPresenter
         $this->mainMenu = [
             ItemMenu::make('Страницы')->route('adfm.pages.index')->icon("insert_drive_file"),
             ItemMenu::make('Меню')->route('adfm.menus.index')->icon("menu"),
-            ItemMenu::make('Роли')->route('adfm.roles.index')->icon('supervised_user_circle'),
+            'Конфигурация' => [
+                ItemMenu::make('Роли')->route('adfm.roles.index')->icon('supervised_user_circle'),
+                ItemMenu::make('Пользователи')->route('adfm.users.index')->icon('people'),
+            ]
         ];
     }
 
