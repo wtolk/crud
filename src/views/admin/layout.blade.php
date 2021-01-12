@@ -28,6 +28,8 @@
     <script src="/vendor/wtolk/crud/js/cropper.min.js"></script>
     <script src="/vendor/wtolk/crud/js/wtolk-uploader/wtolk-uploader.js"></script>
     <script src="/vendor/wtolk/crud/lib/selectize/selectize.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/css/hystmodal.min.css">
     <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/css/cropper.min.css">
     <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/js/wtolk-uploader/wtolk-uploader.css">
