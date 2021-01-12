@@ -1,4 +1,4 @@
-<div class="field">
+<div class="field no-bg">
     <label>{{$input->title}}</label>
     <input type="{{$input->type}}" name="{{$input->field_name }}" class="form-control"
            value="{{ $input->field_value }}" placeholder="{{$input->placeholder}}"

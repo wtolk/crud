@@ -4,14 +4,10 @@
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
-
-            <div class="pages-title">
-                <h1>Содержимое</h1>
-                <hr>
-            </div>
-
             <div class="box">
-                <!-- /.box-header -->
+                <div class="page-title">
+                    <h1>{{$form->title}}</h1>
+                </div>
                 <div class="box-body">
                     <table class="table table-hover">
                         <thead>

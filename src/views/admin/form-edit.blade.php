@@ -5,13 +5,12 @@
         <div class="row">
             <div class="col col-xs-12">
 
-                <div class="pages-title">
-                    <h1>{{$form->title}}</h1>
-                    <hr>
-                </div>
+
 
                 <div class="box">
-
+                    <div class="page-title">
+                        <h1>{{$form->title}}</h1>
+                    </div>
                     <div class="box-body">
                         @if($form->isModelExists)
                             <form method="POST" data-controller="form" id="main-form" action="{{$form->route}}" role="form" enctype="multipart/form-data" autocomplete="off">

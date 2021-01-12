@@ -6,7 +6,7 @@
 {{--</div>--}}
 
 
-<div class="field">
+<div class="field no-bg">
     <label for="title">{{$input->title}}</label>
     <textarea name="{{$input->field_name }}"
               class="form-control summernote"
