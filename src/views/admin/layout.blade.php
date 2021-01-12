@@ -7,6 +7,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/wtolk/crud/css/adfm-panel.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 {{--    <link rel="stylesheet" href="/panel/admin/css/bootstrap.min.css">--}}
 {{--    <link rel="stylesheet" href="/panel/admin/css/style.css">--}}
 {{--    <link rel="stylesheet" href="/panel/admin/css/admin-menu.css">--}}
@@ -52,9 +54,9 @@
 
     <aside class="sideBar"><img id="sidebg" src="/vendor/wtolk/crud/img/sidebar-wallpaper.jpg">
         <div class="side-menu">
-            <h3>ADFM CMS</h3>
+            <div class="panel-name">ADFM CMS</div>
 
-{{--            {% set admin_menu = getAdminMenuItems() %}--}}
+        {{--            {% set admin_menu = getAdminMenuItems() %}--}}
 
 {{--            {% for item in admin_menu.standart %}--}}
 {{--            <a href="/admin/{{item.link}}"><i class="fa {{item.fa_ico}}"></i> <span>{{item.title}}</span> </a>--}}
@@ -99,7 +101,16 @@
 
             <!--<li><a href="/admin/files"><i class="fa-file fa"></i><span>Файлы</span></a></li>-->
             @foreach($form->mainMenu as $itemMenu)
-                <a href="{{route($itemMenu->route)}}"><i class="{{$itemMenu->icon}}"></i><span>{{$itemMenu->title}}</span></a>
+                @if(is_array($itemMenu))
+                    <div class="block-links">
+                        <div class="title">{{array_keys($form->mainMenu)[$loop->index]}}</div>
+                        @foreach($itemMenu as $subitem)
+                            <a href="{{route($subitem->route)}}"><i class="material-icons">{{$subitem->icon}}</i><span>{{$subitem->title}}</span></a>
+                        @endforeach
+                    </div>
+                @else
+                    <a href="{{route($itemMenu->route)}}"><i class="material-icons">{{$itemMenu->icon}}</i><span>{{$itemMenu->title}}</span></a>
+                @endif
             @endforeach
             <a href="/admin/settings"><i class="fa-gear fa"></i><span>Конфигурация</span></a>
             <div class="sidebar-submenu">
@@ -107,8 +118,6 @@
                     <li><a href="/admin/settings/redirects"><i class="fa"></i><span>Перенаправления</span></a></li>
                 </ul>
             </div>
-            <a href="/admin/users"><i class="fa-users fa"></i><span>Пользователи</span></a>
-            <a href="/admin/roles"><i class="fa-user-secret fa"></i><span>Роли</span></a>
         </div>
 
     </aside>

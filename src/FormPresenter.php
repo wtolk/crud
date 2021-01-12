@@ -42,9 +42,9 @@ class FormPresenter
     public function registerMainMenu()
     {
         $this->mainMenu = [
-            ItemMenu::make('Страницы')->route('adfm.pages.index')->icon("far fa-file"),
-            ItemMenu::make('Меню')->route('adfm.menus.index')->icon("fas fa-bars"),
-            ItemMenu::make('Роли')->route('adfm.roles.index')->icon('fas fa-user-circle'),
+            ItemMenu::make('Страницы')->route('adfm.pages.index')->icon("insert_drive_file"),
+            ItemMenu::make('Меню')->route('adfm.menus.index')->icon("menu"),
+            ItemMenu::make('Роли')->route('adfm.roles.index')->icon('supervised_user_circle'),
         ];
     }
 

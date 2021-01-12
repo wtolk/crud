@@ -144,55 +144,54 @@ body .wrapper hr.field-del {
     border-top: 1px solid #E1E1E1;
 }
 
-body .wrapper aside .side-menu a {
-    display: block;
-    width: auto;
-    font-size: 16px;
-    font-family: "Sans";
-    color: #fff;
-    line-height: 32px;
-    position: relative;
-}
+//body .wrapper aside .side-menu a:hover {
+//    background: rgba(255, 255, 255, 0.15);
+//    text-decoration: none;
+//}
 
-body .wrapper aside .side-menu .sidebar-submenu li a {
-    font-size: 12px;
-    line-height: 32px;
-}
+.material-icons {
+    font-family: 'Material';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
 
-body .wrapper aside .side-menu .sidebar-menu {
-    padding: 0 0 0 10px;
-}
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
 
-body .wrapper aside .side-menu .sidebar-menu li {
-    list-style: none;
-}
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
 
-body .wrapper aside .side-menu a span {
-    /*position: absolute;*/
-    /*left: 20%;*/
-}
-
-body .wrapper aside .side-menu a:hover {
-    background: rgba(255, 255, 255, 0.15);
-    text-decoration: none;
-}
-
-body .wrapper aside .side-menu a i {
-    margin: 0 6px 0 10px;
-    width: 20px;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
 }
 
 @font-face {
-    font-family: "Sans";
-    src: url(/vendor/wtolk/crud/fonts/clearsansbold.woff2?0d651f8ebfa508a5faea1e03c97f1a80) format("woff2"), url(/vendor/wtolk/crud/fonts/clearsansbold.woff?f1d326af902254d77d541922ffe67beb) format("woff"), url(/vendor/wtolk/crud/fonts/clearsansbold.ttf?3c8c6c940f1c1a9258dfad7e25347c21) format("truetype");
-    font-weight: 700;
+    font-family: "SansBold";
+    src: url(/vendor/wtolk/crud/fonts/clearsansbold.woff2) format("woff2"), url(/vendor/wtolk/crud/fonts/clearsansbold.woff) format("woff"), url(/vendor/wtolk/crud/fonts/clearsansbold.ttf) format("truetype");
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: "Sans";
-    src: url(/vendor/wtolk/crud/fonts/clearsans.woff2?2e81f3d7e39f04d4aaa3b916f882530c) format("woff2"), url(/vendor/wtolk/crud/fonts/clearsans.woff?76c7e83bde05ce0e0d46f58f853aba72) format("woff"), url(/vendor/wtolk/crud/fonts/clearsans.ttf?006ab1b7f3f900b6ce54ff93f148523c) format("truetype");
+    src: url(/vendor/wtolk/crud/fonts/clearsans.woff2) format("woff2"), url(/vendor/wtolk/crud/fonts/clearsans.woff) format("woff"), url(/vendor/wtolk/crud/fonts/clearsans.ttf) format("truetype");
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SansBold";
+    src: url(/vendor/wtolk/crud/fonts/clearsansbold.woff2) format("woff2"), url(/vendor/wtolk/crud/fonts/clearsansbold.woff) format("woff"), url(/vendor/wtolk/crud/fonts/clearsansbold.ttf) format("truetype");
+    font-weight: 700;
     font-style: normal;
 }
 
@@ -497,8 +496,54 @@ footer.main-footer {
     margin-top: 4%;
 }
 
-.side-menu h3 {
-    text-align: center;
+.side-menu {
+    .panel-name {
+        text-align: center;
+        font-family: SansBold;
+        font-size: 16px;
+        line-height: 24px;
+        color: #279EF3;
+        padding-top: 16px;
+        padding-bottom: 32px;
+    }
+    a {
+        display: flex;
+        width: auto;
+        text-decoration: none;
+        font-size: 14px;
+        font-family: "Sans";
+        color: #fff;
+        line-height: 32px;
+        margin-bottom: 16px;
+        position: relative;
+        i {
+            margin: 0 6px 0 10px;
+            top: 3px;
+        }
+    }
+    a:hover::before {
+        background: #0F2B6B;
+        box-shadow: inset 0px 0px 10px rgba(0, 218, 255, 0.32);
+        border: 1px solid #01C1F1;
+        border-radius: 16px;
+        width: 100%;
+        height: 32px;
+        content: " ";
+        display: block;
+        position: absolute;
+        left: -20px;
+    }
+    .block-links {
+        margin-top: 32px;
+        padding-bottom: 16px;
+        .title {
+            font-size: 16px;
+            line-height: 19px;
+            text-transform: uppercase;
+            color: #279EF3;
+            margin: 0 0 16px 10px;
+        }
+    }
 }
 
 span.sandwitch {
