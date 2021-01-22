@@ -18,6 +18,7 @@ class Cropper extends Model
     public $field_name;
     public $field_name_dotted;
     public $field_value = null;
+    public $crop_size = null;
     public $entity;
 
     public static function make($field_name)
@@ -32,6 +33,12 @@ class Cropper extends Model
     public function title($title)
     {
         $this->title = $title;
+        return $this;
+    }
+
+    public function cropSize($width, $height)
+    {
+        $this->crop_size = [$width, $height];
         return $this;
     }
 

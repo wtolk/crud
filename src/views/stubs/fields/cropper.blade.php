@@ -47,9 +47,11 @@
             Modal.open('div[data-field="{{$input->field_name_dotted }}"]');
             const image = document.getElementById('image');
             window.cropper = new Cropper(image, {
-                // aspectRatio: 1,
-                viewMode: 3,
+                dragMode: 'move',
+                @if ($input->crop_size)aspectRatio: {{$input->crop_size[0]}} / {{$input->crop_size[1]}},@endif
+                viewMode: 0,
             });
+            console.log(window.cropper.getImageData(), 'тут');
         }, false);
 
         if (file) {
