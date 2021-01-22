@@ -6,35 +6,22 @@
     <title>Админ панель</title>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/wtolk/crud/css/adfm-panel.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="{{ asset('vendor/wtolk/crud/js/admin.js') }}"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 {{--    <link rel="stylesheet" href="/panel/admin/css/bootstrap.min.css">--}}
-{{--    <link rel="stylesheet" href="/panel/admin/css/style.css">--}}
-{{--    <link rel="stylesheet" href="/panel/admin/css/admin-menu.css">--}}
+    {{--    <link rel="stylesheet" href="/panel/admin/css/style.css">--}}
+    {{--    <link rel="stylesheet" href="/panel/admin/css/admin-menu.css">--}}
 
     <!-- Nestable -->
-{{--    <link rel="stylesheet" href="/panel/admin/css/selectize.default.css">--}}
-{{--    <link rel="stylesheet" href="/panel/admin/css/nestable.css">--}}
+    {{--    <link rel="stylesheet" href="/panel/admin/css/selectize.default.css">--}}
+    {{--    <link rel="stylesheet" href="/panel/admin/css/nestable.css">--}}
 
 
-{{--    <link rel="stylesheet" href="/panel/admin/css/custom.css">--}}
-{{--    <link rel="stylesheet" href="/panel/admin/css/flatpickr.min.css">--}}
-{{--    <link rel="stylesheet" href="/panel/admin/css/selectize.default.css">--}}
-
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script src="/vendor/wtolk/crud/js/hystmodal.min.js"></script>
-    <script src="/vendor/wtolk/crud/js/Sortable.min.js"></script>
-    <script src="/vendor/wtolk/crud/js/cropper.min.js"></script>
-    <script src="/vendor/wtolk/crud/js/wtolk-uploader/wtolk-uploader.js"></script>
-    <script src="/vendor/wtolk/crud/lib/selectize/selectize.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/css/hystmodal.min.css">
-    <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/css/cropper.min.css">
-    <link rel="stylesheet" type="text/css" href="/vendor/wtolk/crud/js/wtolk-uploader/wtolk-uploader.css">
+
 
     {{--    <script type="text/javascript" href="/panel/plugins/ckeditor/ckeditor.js"></script>--}}
 {{--    <script>--}}
@@ -45,7 +32,6 @@
 {{--            });--}}
 {{--        });--}}
 {{--    </script>--}}
-{{--    <script src="/panel/admin/js/selectize.min.js" type="text/javascript"></script>--}}
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
