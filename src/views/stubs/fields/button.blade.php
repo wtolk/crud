@@ -1,11 +1,17 @@
+@php
+    $confirm = null;
+    if ($button->title == 'Удалить' || $button->method == 'DELETE') {
+        $confirm = true;
+    }
+@endphp
 @if($button->method != 'POST' && $button->method != 'GET' && !$button->submit)
-<form action="{{route($button->route, request()->route('id'))}}" method="POST">
-    @method($button->method)
-    @csrf
-@endif
-<button @if($button->submit)type="submit" form="main-form"@endif class="button">{{$button->title}}</button>
-@if($button->method != null)
-</form>
+    <form action="{{route($button->route, request()->route('id'))}}" method="POST">
+        @method($button->method)
+        @csrf
+        @endif
+        <button @if($button->submit)type="submit" form="main-form"@endif class="button confirm-action">{{$button->title}} </button>
+        @if($button->method != null)
+    </form>
 @endif
 {{--@if($item->exists)--}}
 {{--    <form action="{{route('adfm.pages.destroy', $item->id)}}" method="POST">--}}
