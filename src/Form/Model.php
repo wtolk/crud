@@ -25,13 +25,13 @@ class Model
 
     public static function make($field_name)
     {
-        $item = new self();
+        $item = new static();
         $item->field_name_dotted = $field_name;
         $item->field_value = $item->getFieldValueFromDottedString($field_name);
         $item->field_name = $item->getFieldNameFromDottedString($field_name);
         return $item;
     }
-    
+
     public function defaultValue($value) {
         $this->default_value = $value;
         return $this;

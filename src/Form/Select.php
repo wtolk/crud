@@ -8,7 +8,7 @@ class Select extends Model
     public $template = 'crud::stubs.fields.input-select';
     public $options = [];
     public $empty = null;
-    
+
     public function options(Array $array)
     {
         $this->options = $array;
