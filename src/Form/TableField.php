@@ -10,11 +10,6 @@ use Whoops\Exception\ErrorException;
 
 class TableField extends Model
 {
-    public $title;
-    public $field_name;
-    public $field_name_dotted;
-    public $field_value = null;
-    public $entity;
     public $link;
     public $function;
 
@@ -26,12 +21,6 @@ class TableField extends Model
         $item->field_value = $item->getFieldValueFromDottedString($field_name);
         $item->field_name = $item->getFieldNameFromDottedString($field_name);
         return $item;
-    }
-
-    public function title($title)
-    {
-        $this->title = $title;
-        return $this;
     }
 
     public function link($closure)

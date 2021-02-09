@@ -2,18 +2,12 @@
 
 namespace Wtolk\Crud\Form;
 
-use App\Helpers\Dev;
-
-class Button
+class Button extends Model
 {
-    public $title;
-    public $icon;
     public $route;
     public $method = null;
     public $submit = false;
     public $template = 'crud::stubs.fields.button';
-    public $entity;
-    public $canSee = true;
 
     public static function make($title)
     {
@@ -21,13 +15,7 @@ class Button
         $item->title = $title;
         return $item;
     }
-
-    public function icon($icon_name)
-    {
-        $this->icon = $icon_name;
-        return $this;
-    }
-
+    
     public function route($route_name)
     {
         $this->route = $route_name;
@@ -44,17 +32,9 @@ class Button
         return $this;
     }
 
-    public function canSee($bool)
-    {
-        $this->canSee = $bool;
-        return $this;
-    }
-
     public function render($entity) {
         $button = $this;
         $button->entity = $entity;
         return view($this->template, compact('button'))->render();
     }
-
-
 }
