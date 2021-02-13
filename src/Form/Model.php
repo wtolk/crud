@@ -22,6 +22,7 @@ class Model
     public $field_name_dotted;
     public $field_value = null;
     public $entity;
+    public $multiple = false;
 
     public static function make($field_name)
     {
@@ -34,6 +35,11 @@ class Model
 
     public function defaultValue($value) {
         $this->default_value = $value;
+        return $this;
+    }
+
+    public function multiple($bool = true) {
+        $this->multiple = $bool;
         return $this;
     }
 
