@@ -9,6 +9,6 @@
         input_name: "{{$input->field_name }}[files][]",
         field_name: "{{$input->field_name }}",
         preview: @if($input->preview) true @else false @endif,
-        files: {!!  $input->field_value->toJson()!!}
+        files: @if($input->field_value) {!!  $input->field_value->toJson()!!} @else [] @endif
     });
 </script>
