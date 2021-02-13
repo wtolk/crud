@@ -1,5 +1,5 @@
 @php
-    $confirm = null;
+    $confirm = false;
     if ($button->title == 'Удалить' || $button->method == 'DELETE') {
         $confirm = true;
     }
@@ -9,7 +9,7 @@
         @method($button->method)
         @csrf
         @endif
-        <button @if($button->submit)type="submit" form="main-form"@endif class="button confirm-action">{{$button->title}} </button>
+        <button @if($button->submit)type="submit" form="main-form"@endif class="button @if($confirm) confirm-action @endif">{{$button->title}} </button>
         @if($button->method != null)
     </form>
 @endif
