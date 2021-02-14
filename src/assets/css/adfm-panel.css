@@ -54,6 +54,50 @@ img {
   z-index: 999;
 }
 
+.flex-center {
+  align-items: center;
+}
+
+.flex-align-start {
+  align-items: flex-start;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-align-baseline {
+  align-items: baseline;
+}
+
+.flex-align-stretch {
+  align-items: stretch;
+}
+
+.flex-justify-start {
+  justify-content: flex-start;
+}
+
+.flex-justify-end {
+  justify-content: flex-end;
+}
+
+.flex-justify-center {
+  justify-content: center;
+}
+
+.flex-justify-baseline {
+  justify-content: baseline;
+}
+
+.flex-justify-stretch {
+  justify-content: stretch;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -1828,7 +1872,7 @@ body .main-page {
 }
 /***********************************************/
 .content {
-  padding: 32px 32px 32px 232px;
+  padding: 32px 32px 32px 32px;
 }
 
 .box {
@@ -1859,8 +1903,8 @@ table td {
   border-top: 1px solid #ddd;
 }
 table td a {
-  color: black !important;
-  text-decoration: none !important;
+  color: black;
+  text-decoration: none;
 }
 table thead tr th {
   vertical-align: bottom;
@@ -1868,6 +1912,13 @@ table thead tr th {
   padding: 8px;
   line-height: 1.42857143;
   text-align: left;
+}
+table tr.deleted {
+  background: #d4d4d4;
+  color: #7a7a7a;
+}
+table tr.deleted a, table tr.deleted button {
+  color: #7a7a7a;
 }
 
 footer.main-footer {
@@ -2018,4 +2069,8 @@ h1 {
 
 .test {
   color: red;
+}
+
+nav ul.pagination li {
+  display: inline-block;
 }

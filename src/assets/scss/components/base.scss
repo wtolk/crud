@@ -51,3 +51,19 @@ img {
     left: 0;
     z-index: 999;
 }
+
+.flex-center {
+    align-items: center;
+}
+
+.flex-align-start {align-items: flex-start;}
+.flex-align-end {align-items: flex-end;}
+.flex-align-center {align-items: center;}
+.flex-align-baseline {align-items: baseline;}
+.flex-align-stretch {align-items: stretch;}
+
+.flex-justify-start {justify-content: flex-start;}
+.flex-justify-end {justify-content: flex-end;}
+.flex-justify-center {justify-content: center;}
+.flex-justify-baseline {justify-content: baseline;}
+.flex-justify-stretch {justify-content: stretch;}
