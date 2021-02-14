@@ -33,7 +33,19 @@ class Relation extends Model
         if ($this->default_value) {
             $input->field_value = $this->default_value;
         } else {
-            $input->field_value = (Arr::get($input->entity, $this->field_name_dotted) == null) ? null : Arr::get($input->entity, $this->field_name_dotted)->id;
+
+            if (Arr::get($input->entity, $this->field_name_dotted) == null) {
+                return null;
+            } else {
+                # Если это коллекция, вернуть массив в качестве значения поля
+                if (is_a(Arr::get($input->entity, $this->field_name_dotted), 'Illuminate\Database\Eloquent\Collection')) {
+                    $input->field_value = Arr::get($input->entity, $this->field_name_dotted)->pluck('title', 'id')->toArray();
+                    $input->default_value = [];
+                # если не коллекция, вернуть id в качестве значения
+                } else {
+                    $input->field_value = null ? null : Arr::get($input->entity, $this->field_name_dotted)->id;
+                }
+            }
         }
         return view($this->template, compact('input'))->render();
     }
