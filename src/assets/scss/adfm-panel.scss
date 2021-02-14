@@ -586,3 +586,7 @@ h1 {
     font-size: 24px;
     line-height: 29px;
 }
+
+nav ul.pagination {
+    li {display: inline-block;}
+}
