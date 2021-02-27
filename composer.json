@@ -22,5 +22,7 @@
             ]
         }
     },
-    "require": {}
+    "require": {
+        "wtolk/eloquent-query-filter": "*"
+    }
 }

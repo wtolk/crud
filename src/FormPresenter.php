@@ -13,6 +13,7 @@ class FormPresenter
     public $source = [];
     public $buttons;
     public $fields;
+    public $filters;
     public $columns;
     public $mainMenu = [];
     public $renderedButtons;
@@ -36,6 +37,12 @@ class FormPresenter
     public function buttons(Array $items)
     {
         $this->buttons = $items;
+        return $this;
+    }
+
+    public function filters(Array $filters)
+    {
+        $this->filters = $filters;
         return $this;
     }
 
@@ -79,12 +86,17 @@ class FormPresenter
         }
 
         foreach ($this->buttons as $button) {
-//            Dev::dd($button->canSee); die;
             if ($button->canSee) {
-//                Dev::dd($button->canSee); die;
                 $this->renderedButtons[] = $button->render($this->source);
             }
         }
+
+        if (isset($this->filters)) {
+            foreach ($this->filters as $filter) {
+                $this->renderedFilters[] = $filter->render($this->source);
+            }
+        }
+
 
         return $this;
     }
