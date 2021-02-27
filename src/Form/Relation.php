@@ -11,7 +11,7 @@ class Relation extends Model
     public $template = 'crud::stubs.fields.input-relation';
     public $options = [];
     public $empty = null;
-    
+
     public function options(Array $array)
     {
         $this->options = $array;
@@ -35,7 +35,7 @@ class Relation extends Model
         } else {
 
             if (Arr::get($input->entity, $this->field_name_dotted) == null) {
-                return null;
+                $input->field_value = null;
             } else {
                 # Если это коллекция, вернуть массив в качестве значения поля
                 if (is_a(Arr::get($input->entity, $this->field_name_dotted), 'Illuminate\Database\Eloquent\Collection')) {

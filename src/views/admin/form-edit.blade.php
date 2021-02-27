@@ -34,7 +34,7 @@
                             </div>
                             </form>
 
-                            <div class="row">
+                            <div class="row flex flex-align-center">
                                 @foreach($form->renderedButtons as $button)
                                     {!! $button !!}
                                 @endforeach
