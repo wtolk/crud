@@ -85,11 +85,14 @@ class FormPresenter
             $this->columns[$index] = $column;
         }
 
-        foreach ($this->buttons as $button) {
-            if ($button->canSee) {
-                $this->renderedButtons[] = $button->render($this->source);
+        if (isset($this->buttons)) {
+            foreach ($this->buttons as $button) {
+                if ($button->canSee) {
+                    $this->renderedButtons[] = $button->render($this->source);
+                }
             }
         }
+
 
         if (isset($this->filters)) {
             foreach ($this->filters as $filter) {

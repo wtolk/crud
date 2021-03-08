@@ -12,10 +12,14 @@
                         </div>
                     </div>
                     <div class="col col-4 flex flex flex-align-center flex-justify-end">
-                        @foreach($form->renderedButtons as $button)
-                            {!! $button !!}
-                        @endforeach
+                        @if(isset($form->renderedButtons))
+                            @foreach($form->renderedButtons as $button)
+                                {!! $button !!}
+                            @endforeach
+                        @endif
+                        @if(isset($form->renderedFilters))
                             <div style="line-height: 17px;" class="button filter-turn material-icons">filter_alt</div>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
@@ -34,7 +38,7 @@
                         </thead>
                         <tbody>
                         @foreach(reset($form->source) as $item)
-                            <tr>
+                            <tr class="@if( method_exists($item, 'trashed') && $item->trashed())deleted @endif" >
                                 @foreach($form->fields as $field)
                                     <td>
 
@@ -55,9 +59,11 @@
             </div>
 
 
-        @foreach($form->renderedButtons as $button)
-            {!! $button !!}
-        @endforeach
+        @if(isset($form->renderedButtons))
+            @foreach($form->renderedButtons as $button)
+                {!! $button !!}
+            @endforeach
+        @endif
 
             <!-- /.box -->
         </div>
@@ -78,6 +84,7 @@
 
 </section>
 
+@if(isset($form->renderedFilters))
 <section id="filter-panel">
     <div class="row">
         <div class="col col-12">
@@ -92,7 +99,9 @@
                         @foreach($form->renderedFilters as $filter)
                             {!! $filter !!}
                         @endforeach
-                        <button type="submit">Фильтр</button>
+                        <div class="field no-bg">
+                            <button class="button" type="submit">Фильтровать</button>
+                        </div>
                     </form>
                 @endif
             </div>
@@ -112,6 +121,7 @@
         height: 100vh;
         box-shadow: 0px 16px 24px rgb(0 0 0 / 36%);
         content-visibility: auto;
+        border-right: 2px solid #6EA5E4;
     }
 </style>
 
@@ -121,9 +131,10 @@
         if ( $('#filter-panel').hasClass("active") ) {
             $('#filter-panel').animate({width:"0px"}, 200);
         } else {
-            $('#filter-panel').animate({width: '800px'});
+            $('#filter-panel').animate({width: '500px'});
         }
         $('#filter-panel').toggleClass("active");
     });
 </script>
+@endif
 @endsection

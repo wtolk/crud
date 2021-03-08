@@ -16,7 +16,7 @@
 <script>
 $(function() {
     $('select[name="{{$input->field_name }}"]').selectize({
-        plugins: ['remove_button'],
+        // plugins: ['remove_button'],
         delimiter: ',',
         persist: false,
         create: function(input) {
