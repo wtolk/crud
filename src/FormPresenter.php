@@ -54,7 +54,12 @@ class FormPresenter
             'Конфигурация' => [
                 ItemMenu::make('Роли')->route('adfm.roles.index')->icon('supervised_user_circle'),
                 ItemMenu::make('Пользователи')->route('adfm.users.index')->icon('people'),
-            ]
+            ],
+            'Каталог' => [
+                ItemMenu::make('Товары')->route('adfm.products.index')->icon('card_giftcard'),
+                ItemMenu::make('Категории')->route('adfm.categories.index')->icon('format_list_bulleted'),
+            ],
+            ItemMenu::make('Обратная сязь')->route('adfm.feedbacks.index')->icon('feedback')
         ];
     }
 

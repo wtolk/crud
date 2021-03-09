@@ -38,6 +38,16 @@ class Model
         return $this;
     }
 
+    /**
+     *  Заполняет значение по умолчанию из адресной строки
+     */
+    public function setFilter()
+    {
+        $args = explode( '.', $this->field_name_dotted);
+        $this->default_value = (request()->{$args[0]} && request()->{$args[0]}[$args[1]] ) ? request()->{$args[0]}[$args[1]] : null;
+        return $this;
+    }
+
     public function multiple($bool = true) {
         $this->multiple = $bool;
         return $this;
@@ -101,6 +111,12 @@ class Model
     {
         $this->canSee = $bool;
         return $this;
+    }
+
+    public function __toString()
+    {
+        $this->default_value = '';
+        return $this->render(['item' => null]);
     }
 
     public function render($entity) {
