@@ -24,6 +24,6 @@
     },
     "require": {
         "wtolk/eloquent-query-filter": "*",
-        "machy8/xhtml-formatter": "*",
+        "machy8/xhtml-formatter": "*"
     }
 }
