@@ -28,7 +28,11 @@ class Summernote extends Model
                 $input->field_value = $this->default_value;
             } elseif ($input->entity) {
                 $input->field_value = Arr::get($input->entity, $this->field_name_dotted);
+                if ($this->field_value == null) {
+                    $input->field_value = '';
+                }
             }
+
             $formatter = new Formatter();
             $input->field_value = $formatter->format($input->field_value);
             return view($this->template, compact('input'))->render();
