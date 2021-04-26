@@ -51,15 +51,16 @@ class FormPresenter
         $this->mainMenu = [
             ItemMenu::make('Страницы')->route('adfm.pages.index')->icon("insert_drive_file"),
             ItemMenu::make('Меню')->route('adfm.menus.index')->icon("menu"),
+//            ItemMenu::make('Товары')->route('adfm.products.index')->icon('card_giftcard'),
+//            ItemMenu::make('Обратная сязь')->route('adfm.feedbacks.index')->icon('feedback'),
+
             'Конфигурация' => [
                 ItemMenu::make('Роли')->route('adfm.roles.index')->icon('supervised_user_circle'),
                 ItemMenu::make('Пользователи')->route('adfm.users.index')->icon('people'),
             ],
-            'Каталог' => [
-                ItemMenu::make('Товары')->route('adfm.products.index')->icon('card_giftcard'),
-                ItemMenu::make('Категории')->route('adfm.categories.index')->icon('format_list_bulleted'),
-            ],
-            ItemMenu::make('Обратная сязь')->route('adfm.feedbacks.index')->icon('feedback')
+//            'Каталог' => [
+////                ItemMenu::make('Категории')->route('adfm.categories.index')->icon('format_list_bulleted'),
+//            ],
         ];
     }
 
