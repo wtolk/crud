@@ -10,12 +10,6 @@ class TinyMCE extends Model
 {
     public $type = 'textarea';
     public $template = 'crud::stubs.fields.input-tinymce';
-    public $devMode = false;
-    
-    public function devMode($bool = true) {
-        $this->devMode = $bool;
-        return $this;
-    }
     
     public function render($entity) {
         if ($this->canSee) {
@@ -33,8 +27,6 @@ class TinyMCE extends Model
                 }
             }
 
-            $formatter = new Formatter();
-            $input->field_value = $formatter->format($input->field_value);
             return view($this->template, compact('input'))->render();
         }
     }
