@@ -43,7 +43,7 @@ class Relation extends Model
                     $input->default_value = [];
                 # если не коллекция, вернуть id в качестве значения
                 } else {
-                    $input->field_value = null ? null : Arr::get($input->entity, $this->field_name_dotted)->id;
+                    $input->field_value = null ? null : Arr::get($input->entity, $this->field_name_dotted);
                 }
             }
         }

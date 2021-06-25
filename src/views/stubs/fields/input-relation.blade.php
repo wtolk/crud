@@ -15,7 +15,7 @@
 
 <script>
 $(function() {
-    $('select[name="{{$input->field_name }}"]').selectize({
+    $('select[name="{{$input->field_name }}@if($input->multiple)[] @endif"]').selectize({
         // plugins: ['remove_button'],
         delimiter: ',',
         persist: false,
