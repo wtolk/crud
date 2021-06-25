@@ -53,10 +53,10 @@ class FormPresenter
             ItemMenu::make('Меню')->route('adfm.menus.index')->icon("menu"),
             ItemMenu::make('Обратная сязь')->route('adfm.feedbacks.index')->icon('feedback'),
 
-        //    'Каталог' => [
-        //        ItemMenu::make('Категории')->route('adfm.categories.index')->icon('format_list_bulleted'),
-        //        ItemMenu::make('Товары')->route('adfm.products.index')->icon('card_giftcard'),
-        //     ],
+           'Каталог' => [
+               ItemMenu::make('Категории')->route('adfm.categories.index')->icon('format_list_bulleted'),
+               ItemMenu::make('Товары')->route('adfm.products.index')->icon('card_giftcard'),
+            ],
 
             'Конфигурация' => [
                 ItemMenu::make('Роли')->route('adfm.roles.index')->icon('supervised_user_circle'),
