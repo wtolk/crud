@@ -4,9 +4,6 @@
     <section class="content">
         <div class="row">
             <div class="col col-xs-12">
-
-
-
                 <div class="box">
                     <div class="page-title">
                         <h1>{{$form->title}}</h1>

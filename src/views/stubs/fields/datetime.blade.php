@@ -7,12 +7,10 @@
 </div>
 
 <script>
-$(function() {
-    $('input[name="{{$input->field_name }}"]').flatpickr(
-        {
+    $( document ).ready(function() {
+        let calendar = flatpickr('input[name="{{$input->field_name }}"]', {
             enableTime: true,
-            dateFormat: "Y-m-d H:i",
-        }
-    );
-});
+            dateFormat: "Y-m-d H:i:s",
+        });
+    });
 </script>
