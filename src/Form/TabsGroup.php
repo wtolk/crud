@@ -5,26 +5,17 @@ namespace Wtolk\Crud\Form;
 use Illuminate\Support\Arr;
 use Whoops\Exception\ErrorException;
 
-class Column
+class TabsGroup
 {
-    public $class = 'col col-md-8';
-    public $fields;
-    public $route;
-    public $renderedFields;
-    public $method = null;
-    public string $template = 'crud::stubs.fields.column';
+    public array $tabs = [];
+    public array $renderedTabs = [];
+    public string $template = 'crud::stubs.fields.tabs-group';
 
-    public static function make($fields)
+    public static function make(Tab ...$tabs): static
     {
         $item = new self();
-        $item->fields = $fields;
+        $item->tabs = $tabs;
         return $item;
-    }
-
-    public function class($class)
-    {
-        $this->class = $class;
-        return $this;
     }
 
     public function __toString()
@@ -36,11 +27,13 @@ class Column
         if (!Arr::isAssoc($entity)) {
             throw new ErrorException('Неправильно задан $form->source, должен быть ассоциативный массив', 500);
         }
-        $input = $this;
-        foreach ($this->fields as $field) {
-            $this->renderedFields[] = $field->render($entity);
+
+        foreach ($this->tabs as $index => $tab) {
+            $tab->id = 'tab-' . $index;
+            $this->renderedTabs[$index] = $tab->render($entity);
         }
 
+        $input = $this;
         return view($this->template, compact('input'))->render();
     }
 

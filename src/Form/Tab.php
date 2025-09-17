@@ -5,25 +5,24 @@ namespace Wtolk\Crud\Form;
 use Illuminate\Support\Arr;
 use Whoops\Exception\ErrorException;
 
-class Column
+class Tab
 {
-    public $class = 'col col-md-8';
+    public string $title = 'Tab Title';
+    public string $id;
     public $fields;
-    public $route;
     public $renderedFields;
-    public $method = null;
-    public string $template = 'crud::stubs.fields.column';
+    public string $template = 'crud::stubs.fields.tab';
 
-    public static function make($fields)
+    public static function make($fields): static
     {
         $item = new self();
         $item->fields = $fields;
         return $item;
     }
 
-    public function class($class)
+    public function title($title): static
     {
-        $this->class = $class;
+        $this->title = $title;
         return $this;
     }
 

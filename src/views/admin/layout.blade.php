@@ -45,13 +45,13 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.confirm-action').click(function (e) {
-            var result = window.confirm('Вы уверены ?');
-            if (result == false) {
+            let result = window.confirm('Вы уверены ?');
+            if (result === false) {
                 e.preventDefault();
             };
         });
     });
-
+    let tabs = new Tabby('[data-tabs]');
 
 </script>
 </body>
