@@ -83,6 +83,9 @@ class FormPresenter
 
     public function build()
     {
+        if (empty($this->columns)) {
+            $this->columns[] = Column::make($this->fields);
+        }
         foreach ($this->columns as $index => $column) {
             $this->columns[$index] = $column->render($this->source);
         }
