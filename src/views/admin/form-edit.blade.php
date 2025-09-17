@@ -8,7 +8,7 @@
                     <div class="page-title">
                         <h1>{{$form->title}}</h1>
                     </div>
-                    
+
 
 
                     <div class="box-body form">
